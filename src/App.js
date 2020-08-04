@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import LocalDataElement from './com/localData/LocalDataElement'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <header
+        style = {{
+          height: '10vh',margin: '10%',border: '2px gray solid',borderRadius: '25px',display: 'flex',justifyContent: 'space-around'
+        }}
+      >
+        <h1
+          style = {{
+            lineHeight: '10vh', margin: 0
+          }}
         >
-          Learn React
-        </a>
+          covid75
+        </h1>
       </header>
+    
+          <LocalDataElement />
+          
     </div>
   );
 }
