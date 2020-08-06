@@ -1,25 +1,31 @@
-import React from 'react';
+import React , {useState}from 'react';
 
-import LocalDataElement from './com/localData/LocalDataElement'
+import Header from './com/header/Header'
+import Middle from './com/middleStuff/Middle'
+import Bottom from './com/bottom/Bottom'
 
 function App() {
+  const [showTab, setShowTab] = useState ('0')
+
+  function setTab (value) {
+    setShowTab (value)
+  }
+
+console.log (showTab)
   return (
-    <div className="App">
-      <header
-        style = {{
-          height: '10vh',margin: '10%',border: '2px gray solid',borderRadius: '25px',display: 'flex',justifyContent: 'space-around'
-        }}
-      >
-        <h1
-          style = {{
-            lineHeight: '10vh', margin: 0
-          }}
-        >
-          covid75
-        </h1>
-      </header>
+    <div className="App"
+    >
+      
+      <Header />
+
+      <Middle
+        showTab = {showTab}
+      />
     
-          <LocalDataElement />
+      <Bottom 
+        setTab = {setTab}
+        showTab = {showTab}
+      />
           
     </div>
   );

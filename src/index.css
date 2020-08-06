@@ -8,7 +8,10 @@ body {
 }
 
 .App {
-  background-color: #fdfdfd;
+  background-color: #e0e0e0;
   max-width: 500px;
   height: 100vh;
+  top: 0;
+  position: relative;
+
 }
