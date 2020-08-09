@@ -8,12 +8,10 @@ import {ReactComponent as Stat} from '../icons/stat.svg'
 const Bottom = (props) => {
 
 	const [iconProps, setIconProps] = useState ([])
-	const [opa, setOpa] = useState (true)
 
 	//handle size
 	useEffect (() => {
 		handleSize ()
-		colorHandler ()
 	}, [])
 
 	const handleSize = () => {
@@ -31,30 +29,26 @@ const Bottom = (props) => {
 
 	// handlers
 	const handleTab = (event) => {
-		if (event.target.attributes.name.value !== undefined) {
+			if (event.target.attributes.name.value !== undefined) {
 			props.setTab (event.target.attributes.name.value )
 		}
 	}
 
 	// color handler
-	useEffect (() => {
-		colorHandler()
-	}, [props.showTab])
-
-	let iconFill = ['#000000', '#000000','#000000','#000000']
-
-	const colorHandler = () => {
-		let choosenTab = props.showTab
-		choosenTab = parseInt(choosenTab)
-		iconFill[choosenTab] = '#9b3f3f'
-		console.log (iconFill)
-	}
+	let color0 = "#000000"
+	if (props.showTab === '0') color0 = '#9b3f3f'
+	let color1 = "#000000"
+	if (props.showTab === '1') color1 = '#9b3f3f'
+	let color2 = "#000000"
+	if (props.showTab === '2') color2 = '#9b3f3f'
+	let color3 = "#000000"
+	if (props.showTab === '3') color3 = '#9b3f3f'
 
 
 	// styles
-	const spanStyle = {height: "100%", width: '25%', display: 'flex', justifyContent: 'space-around'}
+	const spanStyle = {height: "100%", width: '25%', display: 'flex', justifyContent: 'space-around', cursor:'pointer', backgroundColor: 'transparent'}
 
-	const iconStyle = {height: iconProps[0], marginTop: iconProps[1]}
+	const iconStyle = {height: iconProps[0], width: iconProps[0], marginTop: iconProps[1], transition: 'fill 0.5s ease, stroke 0.5s ease'}
 
 	return (
 		<div style = {{height: '8vh', position: 'fixed', top: '92vh', width: '90%', marginLeft: '5%'}}>
@@ -62,38 +56,42 @@ const Bottom = (props) => {
 				className = 'bottomDiv'
 				style = {{height: "100%", width: '100%', backgroundColor: '#e0e0e0', borderRadius: '20px 20px 0 0', boxShadow: 'rgba(0, 0, 0, 0.2) 3px 3px 10px 0px, rgba(255, 255, 255, 0.8) -3px -3px 10px 0px'}}
 			>
-				<div style = {{display: 'flex', justifyContent: 'space-between', padding: '0 6%'}} >
+				<div style = {{height: '100%' ,display: 'flex', justifyContent: 'space-between', padding: '0 6%'}} >
 
 					<span
+						className = 'noSelect'
 						style = {spanStyle}
 						onClick = {handleTab}
 						name = '0'
 					>
-						<Home style = {{...iconStyle, fill: iconFill[0]}} name = '0'/>
+						<Home style = {{...iconStyle, fill: color0, stroke: color0}} name = '0'/>
 					</span>
 
 					<span
+						className = 'noSelect'
 						style = {spanStyle}
 						onClick = {handleTab}
 						name = '1'
 					>
-						<Book style = {{...iconStyle, fill: iconFill[1]}} name = '1'/>
+						<Book style = {{...iconStyle, fill: color1, stroke: color1}} name = '1'/>
 					</span>
 
 					<span
+						className = 'noSelect'
 						style = {spanStyle}
 						onClick = {handleTab}
 						name = '2'
 					>
-						<MapI style = {{...iconStyle, fill: iconFill[2]}} name = '2'/>
+						<MapI style = {{...iconStyle, fill: color2, stroke: color2}} name = '2'/>
 					</span>
 
 					<span
+						className = 'noSelect'
 						style = {spanStyle}
 						onClick = {handleTab}
 						name = '3'
 					>
-						<Stat style = {{...iconStyle, fill: iconFill[3]}} name = '3'/>
+						<Stat style = {{...iconStyle, fill: color3, stroke: color3}} name = '3'/>
 					</span>
 				</div>
 			</div>

@@ -9,9 +9,19 @@ body {
 
 .App {
   background-color: #e0e0e0;
-  max-width: 500px;
+  
   height: 100vh;
   top: 0;
   position: relative;
 
+}
+
+.noSelect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
 }

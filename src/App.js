@@ -11,22 +11,21 @@ function App() {
     setShowTab (value)
   }
 
-console.log (showTab)
   return (
     <div className="App"
     >
-      
-      <Header />
+      <div>
+        <Header />
 
-      <Middle
-        showTab = {showTab}
-      />
-    
-      <Bottom 
-        setTab = {setTab}
-        showTab = {showTab}
-      />
-          
+        <Middle
+          showTab = {showTab}
+        />
+      
+        <Bottom 
+          setTab = {setTab}
+          showTab = {showTab}
+        />
+      </div>
     </div>
   );
 }

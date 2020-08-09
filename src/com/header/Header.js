@@ -5,6 +5,8 @@ import {ReactComponent as InfoLogo} from '../icons/info.svg'
 
 const Header = () => {
 
+	const [isInfoOpen, setInfoOpen] = useState (false)
+
 	const [divPos, setDivPos] = useState ()
 	const [logoFontSize, setLogoFontSize] = useState ()
 	const [logoTopMargin, setLogoTopMargin] = useState ()
@@ -41,6 +43,21 @@ const Header = () => {
 			const iconPadding = (headHeight/2) - (iconSize/2)
 		setIconProps ([iconSize, iconPadding])
 	}
+ 
+	// infoHandler
+	const infoHandler = () => {
+		if (!isInfoOpen) {
+		setInfoOpen (true)
+	} else {
+		setInfoOpen (false)
+	}
+	}
+
+	// style vars
+	let iconColor = '#787878'
+	console.log (isInfoOpen)
+	if (isInfoOpen) iconColor = '#000000'
+
 
 	return (
 		<div className = 'headerDiv' style = {{height: '12.39vh', width: '100%', position: 'fixed'}}>
@@ -56,14 +73,15 @@ const Header = () => {
 						style  = {{margin: '0 0 0 0', height: '100%', }}
 					>
 						<div 
-							style = {{top: logoLineMargin, height: '5px', width: '30%', backgroundColor: '#b84646', borderRadius: '100px', position: 'absolute'}}
+							style = {{top: logoLineMargin, height: '5px', width: '15%', maxWidth: '140px', backgroundColor: '#b84646', borderRadius: '100px', position: 'absolute'}}
 						/>
 						<h1 className = 'logoH1' style = {{position: 'fixed', fontFamily: 'Poppins, Roboto', fontWeight: 'regular', padding: 0, margin: 0, marginTop: logoTopMargin, fontSize: logoFontSize}}>Covid75</h1>
 					</div>
 					<div style = {{flex: 1}}/>
 					<span
-						style = {{height: iconProps[0], padding: `${iconProps[1]}px 0`}}
-					><InfoLogo style = {{height: '100%', fill: '#787878'}}/> </span>
+						onClick = {infoHandler}
+						style = {{height: '100%', padding: 0}}
+					><InfoLogo onClick = {infoHandler} style = {{height: iconProps[0], padding: `${iconProps[1]}px 5%` ,fill: iconColor, stroke: iconColor, transition: 'stroke 0.5s ease, fill 0.5s ease'}}/> </span>
 				</div>
 			</header>
 		</div>
