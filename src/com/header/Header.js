@@ -3,9 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 import {ReactComponent as InfoLogo} from '../icons/info.svg'
 
-const Header = () => {
-
-	const [isInfoOpen, setInfoOpen] = useState (false)
+const Header = (props) => {
 
 	const [divPos, setDivPos] = useState ()
 	const [logoFontSize, setLogoFontSize] = useState ()
@@ -43,27 +41,17 @@ const Header = () => {
 			const iconPadding = (headHeight/2) - (iconSize/2)
 		setIconProps ([iconSize, iconPadding])
 	}
- 
-	// infoHandler
-	const infoHandler = () => {
-		if (!isInfoOpen) {
-		setInfoOpen (true)
-	} else {
-		setInfoOpen (false)
-	}
-	}
 
 	// style vars
 	let iconColor = '#787878'
-	console.log (isInfoOpen)
-	if (isInfoOpen) iconColor = '#000000'
+	if (props.infoOpen) iconColor = '#000000'
 
 
 	return (
 		<div className = 'headerDiv' style = {{height: '12.39vh', width: '100%', position: 'fixed'}}>
 			<header
 				style = {{height: '8.135vh', width: '90%', margin: '0 auto', top: divPos, backgroundColor: '#e0e0e0', position: 'relative',
-					boxShadow: '3px 3px 10px 0 rgba(0, 0, 0, 0.2), -3px -3px 10px 0 rgba(255, 255, 255, 0.8)', borderRadius: '20px'
+					boxShadow: '3px 3px 10px 0 rgba(0, 0, 0, 0.2), -5px -5px 10px 0 rgba(255, 255, 255, 1)', borderRadius: '20px'
 				}}
 			>
 				<div
@@ -79,9 +67,10 @@ const Header = () => {
 					</div>
 					<div style = {{flex: 1}}/>
 					<span
-						onClick = {infoHandler}
-						style = {{height: '100%', padding: 0}}
-					><InfoLogo onClick = {infoHandler} style = {{height: iconProps[0], padding: `${iconProps[1]}px 5%` ,fill: iconColor, stroke: iconColor, transition: 'stroke 0.5s ease, fill 0.5s ease'}}/> </span>
+						className = 'noSelect'
+						onClick = {props.handleInfo}
+						style = {{height: '100%', padding: 0, cursor: 'pointer'}}
+					><InfoLogo onClick = {props.handleInfo} style = {{height: iconProps[0], padding: `${iconProps[1]}px 5%` ,fill: iconColor, stroke: iconColor, transition: 'stroke 0.5s ease, fill 0.5s ease'}}/> </span>
 				</div>
 			</header>
 		</div>

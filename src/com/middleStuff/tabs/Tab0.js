@@ -11,6 +11,7 @@ const Tab0 = (props) => {
     const [updatePSize, setUpdatePSize] = useState ()
     const [zabProps, setZabProps] = useState ([])
     const [infoLiSize,setInfoLiSize] = useState ([])
+    const [infoMeter, setInfoMeter] = useState ([])
     
     useEffect (() => {
         fetchLocalData ()
@@ -18,21 +19,30 @@ const Tab0 = (props) => {
     }, [])
 
     // FETCH DATA
-    const fetchLocalData = () => {
+    const fetchLocalData = async () => {
         fetch ('https://api.apify.com/v2/key-value-stores/1brJ0NLbQaJKPTWMO/records/LATEST?disableRedirect=true')
         .then (response => response.json())
         .then (result => {
             props.setShown (true)
             setLoaded (true)
-            console.log (result.infectedByRegion[50])
+           // console.log (result.infectedByRegion[50])
             setLocalData ([result.infectedByRegion[50].infected, result.infectedByRegion[50].recovered, result.infectedByRegion[50].deceased])
             setUpdateTime (result.lastUpdatedAtSource.toString().slice (0, -14))
+          //  calcMeter (result.infectedByRegion[50])
         })
         .catch (error => {
             setLoaded (false)
             props.setFetchError (error)
             console.error (error)
         })
+    }
+
+    const calcMeter = (result) => {
+        const onePercent = (result.infected + result.recovered + result.deceased) /100
+        const perInfected = result.infected / onePercent
+        const perRecovered = result.recovered / onePercent
+        const perDeceased = result.deceased / onePercent
+        setInfoMeter ([perInfected+'%', perRecovered+'%', perDeceased+'%'])
     }
 
     // CALC SIZES
@@ -64,16 +74,21 @@ const Tab0 = (props) => {
         updateDownload = `${day}.${month}.${date.getFullYear()}`
     }
 
+
+
     const infoBorder = {height: '2px', width: '100%', backgroundColor: '#c4c4c4'}
-    const infoLi = {height: '99%', width: '100%', display: 'flex', justifyContent: 'space-between' }
+    const infoLi = {height: '99%', width: '90%', display: 'flex', justifyContent: 'space-between', padding: '0 5%' }
     const statusP = {fontSize: infoLiSize[1], lineHeight: infoLiSize[0], margin: 0}
     const statusNum = {fontWeight: 'bold'}
     const chS = {fontWeight: '400'}
 
+    let mainDisplay = 'none'
+    if (props.tab === '0') mainDisplay = 'block'
+
     return (
-        <div style = {{height: '100%'}}>
+        <div style = {{height: '100%', width: '100%', display: mainDisplay}}>
             <div style = {{height: '95%', borderRadius: '30px', width: '95%', margin: 'auto ', background: 'linear-gradient(143deg, #ff6969 6%, #cd3d3d 50%, #a81c1c 93%)',
-                    boxShadow: '3px 3px 10px 0 rgba(0, 0, 0, 0.3), -5px -5px 10px 0 rgba(255, 255, 255, 0.9)'}}
+                    boxShadow: '7px 7px 10px 0 rgba(0, 0, 0, 0.3), -7px -7px 10px 0 rgba(255, 255, 255, 1)'}}
             >
                 
                 <div className = 'zabTitle' style = {{height: '10%'}} >
@@ -112,6 +127,7 @@ const Tab0 = (props) => {
                                     </div>
                                 </div>
                             </div>
+
                             <div style = {{height: '100%', width: '3%'}} >
                                 <div style = {{height: '33.33%',width: '100%',borderRadius: '100px 100px 0 0',backgroundColor: 'red'}}/>
                                 <div style = {{height: '33.33%',width: '100%',backgroundColor: 'green'}}/>

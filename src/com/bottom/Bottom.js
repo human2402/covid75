@@ -54,7 +54,7 @@ const Bottom = (props) => {
 		<div style = {{height: '8vh', position: 'fixed', top: '92vh', width: '90%', marginLeft: '5%'}}>
 			<div
 				className = 'bottomDiv'
-				style = {{height: "100%", width: '100%', backgroundColor: '#e0e0e0', borderRadius: '20px 20px 0 0', boxShadow: 'rgba(0, 0, 0, 0.2) 3px 3px 10px 0px, rgba(255, 255, 255, 0.8) -3px -3px 10px 0px'}}
+				style = {{height: "100%", width: '100%', backgroundColor: '#e0e0e0', borderRadius: '20px 20px 0 0', boxShadow: 'rgba(0, 0, 0, 0.2) 3px 3px 10px 0px, rgba(255, 255, 255, 1) -5px -5px 10px 0px'}}
 			>
 				<div style = {{height: '100%' ,display: 'flex', justifyContent: 'space-between', padding: '0 6%'}} >
 
