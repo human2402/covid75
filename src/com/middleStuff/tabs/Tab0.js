@@ -93,7 +93,11 @@ const Tab0 = (props) => {
                 
                 <div className = 'zabTitle' style = {{height: '10%'}} >
                     <div className = 'zabDiv' style = {{height: '70%',position: 'relative', top: zabProps[0], backgroundColor: '#ffffff', marginLeft: '7.5%', padding: '0 5%', display: 'inline-block', borderRadius: '20px'}}>
-                        <p style = {{fontSize: zabProps[1], margin: 0, lineHeight: zabProps[2], fontWeight: '400'}}>Забайкалье:</p>
+                        <p style = {{fontSize: zabProps[1], margin: 0, lineHeight: zabProps[2], fontWeight: '400'}}>
+                            <span style = {{color: 'rgb(100, 5, 5)'}} >
+                                Covid19 </span>
+                            в Забайкалье:
+                        </p>
                     </div>
                 </div>
 

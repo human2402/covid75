@@ -10,7 +10,7 @@ const Middle = (props) => {
 
 	const [tabElement, setTabElement] = useState (<Tab0 setShown = {setShown} setFetchError = {setFetchError}/>)
 
-	const [mainTab, setMainTab] = useState ('0')
+	const [mainTab, setMainTab] = useState ('1')
 
 
 	// SWITCH HANDLER
@@ -25,7 +25,7 @@ const Middle = (props) => {
 
 	async function switchHandler () {
 		setShown (false)
-		await sleep (500)
+		await sleep (400)
 			setMainTab (props.showTab)
 		await sleep (100)
 		setShown (true)
@@ -40,7 +40,7 @@ const Middle = (props) => {
 			style = {{height: '79.61vh', position: 'fixed', top: '12.39vh', width: '100%'}}
 		>	
 			<div 
-           	 	style = {{height: '100%', transform: `translateX(${mainTrans})`, transition: 'transform 0.5s ease-out', display: 'flex'}}
+           	 	style = {{height: '100%', transform: `translateX(${mainTrans})`, transition: 'transform 0.4s ease-out', display: 'flex'}}
         	>	
 				
 			 	<Tab0 tab = {mainTab} setShown = {setShown} setFetchError = {setFetchError} />

@@ -8,7 +8,7 @@ function App() {
   const [infoOpen, setInfoOpen] = useState (false)
 
   const [isVirgin, setVirginity] = useState (true)
-  const [showTab, setShowTab] = useState ('0')
+  const [showTab, setShowTab] = useState ('1')
 
 
   //HANDLERS
