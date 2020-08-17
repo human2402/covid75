@@ -25,6 +25,7 @@ const Tab0 = (props) => {
         .then (result => {
             props.setShown (true)
             setLoaded (true)
+            props.setGlobal (result)
            // console.log (result.infectedByRegion[50])
             setLocalData ([result.infectedByRegion[50].infected, result.infectedByRegion[50].recovered, result.infectedByRegion[50].deceased])
             setUpdateTime (result.lastUpdatedAtSource.toString().slice (0, -14))

@@ -1,6 +1,18 @@
 import React, {useState, useEffect} from 'react'
 
+import {ReactComponent as WarningIcon} from '../../icons/modIcons/warning.svg'
+
+import {ReactComponent as WashHands} from '../../icons/modIcons/wash-hands.svg'
 import {ReactComponent as WaterDropIcon} from '../../icons/info/water.svg'
+
+import {ReactComponent as StayAway} from '../../icons/modIcons/stay-away.svg'
+import {ReactComponent as SpaceIcon} from '../../icons/info/space.svg'
+
+import {ReactComponent as StayHome} from '../../icons/modIcons/stay-home.svg'
+import {ReactComponent as HomeIcon} from '../../icons/info/shome.svg'
+
+import {ReactComponent as WearMask} from '../../icons/modIcons/wear-mask.svg'
+import {ReactComponent as MaskIcon} from '../../icons/info/mask.svg'
 
 const Tab1 = (props) => {
 
@@ -8,8 +20,7 @@ const Tab1 = (props) => {
 	const [warnigProps, setWarningProps] = useState ([])
 
 	//CALC SIZES
-	useEffect (() => calcSizes (), [])
-
+	useEffect (() => calcSizes (), [props.tab])
 	const calcSizes = () => {
 		//calc header
 		const headerHeight = document.querySelector('.headerDiv').clientHeight
@@ -22,9 +33,12 @@ const Tab1 = (props) => {
 			const warnLineHeight = warningDivHeight / 6
 			//font size
 			const warnFontSize = warningDivHeight / 7.5
-			console.log (warnFontSize)
+			//text margin
+			const warnMargin = (( warningDivHeight / 100 ) * 30)/2
+			//icon margin
+			const warnIconMargin = ((warningDivHeight/100)*60)/2
 
-		setWarningProps ([warnLineHeight, warnFontSize])
+		setWarningProps ([warnLineHeight, warnFontSize, warnMargin, warnIconMargin])
 	}
 
 	let mainDisplay = 'none'
@@ -33,7 +47,9 @@ const Tab1 = (props) => {
 	//STYELS
 	const liS = {
 		backgroundColor: '#d8d8d8',
-		borderRadius: '21px'
+		borderRadius: '21px',
+		marginTop: '4vh',
+		boxShadow: '-4px -4px 24px rgba(255,255,255,1), 4px 4px 24px rgba(0,0,0,0.2)'
 	}
 	const liDivS = {
 		height: "90%",
@@ -43,16 +59,22 @@ const Tab1 = (props) => {
 	const liDumbDivS ={
 		height: '2.5vh'
 	}
+	const liMiddleDumbDivS = {
+		height: '0.8vh'
+	}
 	const liPS = {
 		borderRadius: '12px',
 		fontSize: '3vh',
-		width: '80%',
-		padding: '5% 0 5% 10%',
+		width: '70%',
+		padding: '4% 0 4% 8%',
 		backgroundColor: '#e5e5e5',
-		margin: '0 0 0 5%'
+		margin: '0 0 0 3%'
 	}
 	const liIconDivS = {
-
+		margin: '0 8%'
+	}
+	const liIconS = {
+		height: '7vh'
 	}
 	const liTextDivS = {
 		position: 'relative',
@@ -63,7 +85,8 @@ const Tab1 = (props) => {
 		top: 0,
 		fontSize: '2vh',
 		margin: '0 5%',
-		zIndex: '3'
+		zIndex: '3',
+		width: '80%'
 	}
 	const liTextIconDivS = {
 		height: '100%',
@@ -75,6 +98,7 @@ const Tab1 = (props) => {
 		display: 'flex',
 		justifyContent: 'flex-end'
 	}
+
 
 	return (
 		<div
@@ -100,26 +124,30 @@ const Tab1 = (props) => {
 		 	>
 		 		
 		 		<div style = {{width: '5%',height: '100%' , backgroundColor: '#ff3333', borderRadius: '0 33px 33px 0'}}/>
-		 		<p style = {{fontSize: warnigProps[1]+'px', lineHeight: warnigProps[0]+'px', height: '70%', paddingTop: '6%', margin: 0,width: '60%'}}>
+		 		<p style = {{fontSize: warnigProps[1]+'px', lineHeight: warnigProps[0]+'px', height: '70%', paddingTop: warnigProps[2], margin: 0,width: '60%'}}>
 		 			При <span style = {{fontWeight: '600'}} >боли в горле, <br />заложенности носа,<br /> чихании </span> следует обратиться в врачу!
 		 		</p>
+		 		<div style = {{width: '21%'}}>
+		 			<WarningIcon style = {{width: '80%', marginTop: warnigProps[3]}}/> 
+		 		</div>
 
 
 		 	</div>
 
 		 	<div style = {{width: '80%', height: '100%', margin: '0 auto'}} > 
 
-		 		<ul style = {{listStyle: 'none', padding: '0', marginTop: '4vh'}}>
+		 		<ul style = {{listStyle: 'none', padding: '0', margin: '4vh 0'}}>
 		 			<li style = {liS}>
 		 				<div style = {liDivS}>
 		 					<div style = {liDumbDivS} />
 		 					<p style = {liPS}>
 		 						Мойте руки
 		 					</p>
-		 					<div style = {liDumbDivS} />
+		 					<div style = {liMiddleDumbDivS} />
 		 					<div style = {liIconDivS}>
-
+		 						<WashHands style = {liIconS}/>
 		 					</div>
+		 					<div style = {liMiddleDumbDivS} />
 		 					<div style = {liTextDivS}> 
 		 						
 		 					
@@ -134,6 +162,84 @@ const Tab1 = (props) => {
 		 					<div style = {liDumbDivS} />
 		 				</div>
 		 			</li>
+		 		
+			 		<li style = {liS}>
+			 				<div style = {liDivS}>
+			 					<div style = {liDumbDivS} />
+			 					<p style = {liPS}>
+			 						Соблюдайте дистанцию
+			 					</p>
+			 					<div style = {liMiddleDumbDivS} />
+			 					<div style = {liIconDivS}>
+			 						<StayAway style = {liIconS}/>
+			 					</div>
+			 					<div style = {liMiddleDumbDivS} />
+			 					<div style = {liTextDivS}> 
+			 						
+			 					
+				 					<p style = {liTextS}>
+				 						Необходимо соблюдать расстояние не менее 1,5 метра друг от друга. Старайтесь не трогать руками глаза, нос или рот	
+				 					</p>
+			 						<div style = {liTextIconDivS} >
+			 							<SpaceIcon style = {{ right: '14%',width: '15vh',position: 'relative', transform: 'rotate(45deg)', bottom: 0,height: '12vh', width: '12vh', opacity: '0.04'}} />
+			 						</div>
+
+			 					</div>
+			 					<div style = {liDumbDivS} />
+			 				</div>
+			 			</li>
+		 		
+		 				<li style = {liS}>
+		 				<div style = {liDivS}>
+		 					<div style = {liDumbDivS} />
+		 					<p style = {liPS}>
+		 						Оставайтесь дома
+		 					</p>
+		 					<div style = {liMiddleDumbDivS} />
+		 					<div style = {liIconDivS}>
+		 						<StayHome style = {liIconS}/>
+		 					</div>
+		 					<div style = {liMiddleDumbDivS} />
+		 					<div style = {liTextDivS}> 
+		 						
+		 					
+			 					<p style = {liTextS}>
+			 						При возожности, оставайтесь дома. Если необходимо выйти - слудет избегать общественного транспорта и прочих мест скоплений людей
+			 					</p>
+		 						<div style = {liTextIconDivS} >
+		 							<HomeIcon style = {{ height: '100%', width: '47%', opacity: '0.04'}} />
+		 						</div>
+
+		 						</div>
+		 						<div style = {liDumbDivS} />
+		 					</div>
+		 				</li>
+		 		
+		 				<li style = {liS}>
+		 				<div style = {liDivS}>
+		 					<div style = {liDumbDivS} />
+		 					<p style = {liPS}>
+		 						Носите маску
+		 					</p>
+		 					<div style = {liMiddleDumbDivS} />
+		 					<div style = {liIconDivS}>
+		 						<WearMask style = {liIconS}/>
+		 					</div>
+		 					<div style = {liMiddleDumbDivS} />
+		 					<div style = {liTextDivS}> 
+		 						
+		 					
+			 					<p style = {liTextS}>
+			 						Использование медицинской маски предотвращает попадение капел распираторных выделений, которые могут содержать вирусы 
+			 					</p>
+		 						<div style = {liTextIconDivS} >
+		 							<MaskIcon style = {{ height: '18vh',position: 'relative', bottom: '-13%' ,width: '50%', opacity: '0.04'}} />
+		 						</div>
+
+		 						</div>
+		 						<div style = {liDumbDivS} />
+		 					</div>
+		 				</li>
 		 		
 
 

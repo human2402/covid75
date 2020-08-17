@@ -82,7 +82,7 @@ const Bottom = (props) => {
 						onClick = {handleTab}
 						name = '2'
 					>
-						<MapI style = {{...iconStyle, fill: color2, stroke: color2}} name = '2'/>
+						<Stat style = {{...iconStyle, fill: color2, stroke: color2}} name = '2'/>
 					</span>
 
 					<span
@@ -91,8 +91,9 @@ const Bottom = (props) => {
 						onClick = {handleTab}
 						name = '3'
 					>
-						<Stat style = {{...iconStyle, fill: color3, stroke: color3}} name = '3'/>
+						<MapI style = {{...iconStyle, fill: color3, stroke: color3}} name = '3'/>
 					</span>
+
 				</div>
 			</div>
 		</div>

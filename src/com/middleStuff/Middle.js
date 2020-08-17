@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react'
 
 import Tab0 from './tabs/Tab0'
 import Tab1 from './tabs/Tab1'
+import Tab2 from './tabs/Tab2'
 
 const Middle = (props) => {
 
 	const [isShown, setShown] = useState (false)
 	const [fetchError, setFetchError] = useState ('')
+	const [globalLocalData, setGlobalLocalData] = useState ([])
 
 	const [tabElement, setTabElement] = useState (<Tab0 setShown = {setShown} setFetchError = {setFetchError}/>)
 
-	const [mainTab, setMainTab] = useState ('1')
+	const [mainTab, setMainTab] = useState ('0')
 
 
 	// SWITCH HANDLER
@@ -43,10 +45,17 @@ const Middle = (props) => {
            	 	style = {{height: '100%', transform: `translateX(${mainTrans})`, transition: 'transform 0.4s ease-out', display: 'flex'}}
         	>	
 				
-			 	<Tab0 tab = {mainTab} setShown = {setShown} setFetchError = {setFetchError} />
-			 	<Tab1 tab = {mainTab} />			
-				
-				{fetchError !== '' && '<h5>{fetchError}</h5>'}
+			 	<Tab0 
+			 		tab = {mainTab} 
+			 		setShown = {setShown} 
+			 		setFetchError = {setFetchError}
+			 		setGlobal = {setGlobalLocalData}
+			 	/>
+			 	<Tab1 tab = {mainTab} />
+			 	<Tab2
+			 		tab = {mainTab} 
+			 		localData = {globalLocalData}
+			 	/>
 			</div>
 		</div>
 	)
