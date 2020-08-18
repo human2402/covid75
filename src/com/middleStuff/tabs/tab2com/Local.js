@@ -50,6 +50,11 @@ const Local = (props) => {
 		console.log (`the less infected region is ${lessInfected[0]} with total ${lessInfected[1]} of cases`)
 	}
 
+	//VARS
+	let localTarns = '-100'
+	if (props.isOpen) localTarns = '0'
+
+
 	//STYLES
 	const topPS = {
 		fontSize: '3vh', margin: '3vh 0 0 0', fontWeight: '400'
@@ -60,14 +65,8 @@ const Local = (props) => {
 	const bottomDivS = {display: 'flex', justifyContent: 'flex-end'}
 
 	return (
-		<div style = {{margin: 'auto', width: '77%'}}>
-			
-
-			<p style = {{margin: '3vh 0 0 0', fontSize: '4vh', fontWeight: '500'}}>
-				В России:
-			</p>
-
-			<p style = {topPS}>
+		<div style = {{margin: 'auto', width: '77%', transform: `translateY(${localTarns}%)`, transition: 'transform 0.4s ease'}}>
+			<p style = {{...topPS, margin: 0}}>
 				<span style = {topSpanS}>Всего</span> зараженных:
 			</p>
 			<div style = {bottomDivS}>

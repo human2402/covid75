@@ -46,7 +46,7 @@ const Bottom = (props) => {
 
 
 	// styles
-	const spanStyle = {height: "100%", width: '25%', display: 'flex', justifyContent: 'space-around', cursor:'pointer', backgroundColor: 'transparent'}
+	const spanStyle = {height: "100%", width: '33.33%', display: 'flex', justifyContent: 'space-around', cursor:'pointer', backgroundColor: 'transparent'}
 
 	const iconStyle = {height: iconProps[0], width: iconProps[0], marginTop: iconProps[1], transition: 'fill 0.5s ease, stroke 0.5s ease'}
 
@@ -56,7 +56,7 @@ const Bottom = (props) => {
 				className = 'bottomDiv'
 				style = {{height: "100%", width: '100%', backgroundColor: '#e0e0e0', borderRadius: '20px 20px 0 0', boxShadow: 'rgba(0, 0, 0, 0.2) 3px 3px 10px 0px, rgba(255, 255, 255, 1) -5px -5px 10px 0px'}}
 			>
-				<div style = {{height: '100%' ,display: 'flex', justifyContent: 'space-between', padding: '0 6%'}} >
+				<div style = {{height: '100%' ,display: 'flex', justifyContent: 'space-between', padding: '0 7%'}} >
 
 					<span
 						className = 'noSelect'
@@ -85,14 +85,7 @@ const Bottom = (props) => {
 						<Stat style = {{...iconStyle, fill: color2, stroke: color2}} name = '2'/>
 					</span>
 
-					<span
-						className = 'noSelect'
-						style = {spanStyle}
-						onClick = {handleTab}
-						name = '3'
-					>
-						<MapI style = {{...iconStyle, fill: color3, stroke: color3}} name = '3'/>
-					</span>
+					
 
 				</div>
 			</div>
@@ -101,3 +94,13 @@ const Bottom = (props) => {
 }
 
 export default Bottom
+
+
+//<span
+//						className = 'noSelect'
+//						style = {spanStyle}
+//						onClick = {handleTab}
+//						name = '3'
+//					>
+//						<MapI style = {{...iconStyle, fill: color3, stroke: color3}} name = '3'/>
+//					</span>

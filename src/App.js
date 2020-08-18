@@ -39,23 +39,35 @@ function App() {
   }
 
   return (
-    <div className="App"
-    > 
-      <div style = {mainDivStyle}>
-        <Header 
-          infoOpen = {infoOpen}
-          handleInfo = {handleInfo}
-        />
+    <div className="App"> 
+      <div className = 'appInside'>
+        <div style = {mainDivStyle}>
+          <Header 
+            infoOpen = {infoOpen}
+            handleInfo = {handleInfo}
+          />
 
-        <Middle
-          showTab = {showTab}
-          isVirgin = {isVirgin}
-        />
-      
-        <Bottom 
-          setTab = {setTab}
-          showTab = {showTab}
-        />
+          <Middle
+            showTab = {showTab}
+            isVirgin = {isVirgin}
+          />
+        
+          <Bottom 
+            setTab = {setTab}
+            showTab = {showTab}
+          />
+        </div>
+
+
+        <div 
+          style = {{borderRadius: '20px' ,margin: 'auto' ,boxShadow: '7px 7px 10px 0 rgba(0, 0, 0, 0.3), -7px -7px 10px 0 rgba(255, 255, 255, 1)'}}
+          className = 'warner'
+        >
+          <h2>Разрешение экрана не поддерживается.<br/>
+            Попробуйте открыть сайт на болшем устройстве. <br/>
+            Или, если телефон повернут гаризотально, поверните его вертикально
+          </h2>
+        </div>
       </div>
     </div>
   );
