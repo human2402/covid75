@@ -12,7 +12,7 @@ const Local = (props) => {
 	}, [props.data])
 
 	useEffect (() => {
-		consStuff ()
+		//consStuff ()
 	}, [lessInfected])
 
 

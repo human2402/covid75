@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
   background-color: #e0e0e0;
   
   height: 100vh;
-  max-width: 400px;
+  max-width: 400px;	
 
   top: 0;
   position: relative;
