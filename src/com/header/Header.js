@@ -42,9 +42,14 @@ const Header = (props) => {
 		setIconProps ([iconSize, iconPadding])
 	}
 
+	// hanlder
+	const setInfo = () => {
+		props.setTab('-1')
+	}
+
 	// style vars
 	let iconColor = '#787878'
-	if (props.infoOpen) iconColor = '#000000'
+	if (props.showTab === '-1') iconColor = '#000000'
 
 
 	return (
@@ -68,9 +73,9 @@ const Header = (props) => {
 					<div style = {{flex: 1}}/>
 					<span
 						className = 'noSelect'
-						onClick = {props.handleInfo}
+						onClick = {setInfo}
 						style = {{height: '100%', padding: 0, cursor: 'pointer'}}
-					><InfoLogo onClick = {props.handleInfo} style = {{height: iconProps[0], padding: `${iconProps[1]}px 5%` ,fill: iconColor, stroke: iconColor, transition: 'stroke 0.5s ease, fill 0.5s ease'}}/> </span>
+					><InfoLogo onClick = {setInfo} style = {{height: iconProps[0], padding: `${iconProps[1]}px 5%` ,fill: iconColor, stroke: iconColor, transition: 'stroke 0.5s ease, fill 0.5s ease'}}/> </span>
 				</div>
 			</header>
 		</div>

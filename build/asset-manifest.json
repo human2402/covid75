@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.3fac7f28.chunk.css",
-    "main.js": "/static/js/main.bcda88e0.chunk.js",
-    "main.js.map": "/static/js/main.bcda88e0.chunk.js.map",
+    "main.css": "/static/css/main.481c6462.chunk.css",
+    "main.js": "/static/js/main.d285ee2a.chunk.js",
+    "main.js.map": "/static/js/main.d285ee2a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.36ad6461.js",
     "runtime-main.js.map": "/static/js/runtime-main.36ad6461.js.map",
-    "static/js/2.ee5ecee6.chunk.js": "/static/js/2.ee5ecee6.chunk.js",
-    "static/js/2.ee5ecee6.chunk.js.map": "/static/js/2.ee5ecee6.chunk.js.map",
+    "static/js/2.bfe337bb.chunk.js": "/static/js/2.bfe337bb.chunk.js",
+    "static/js/2.bfe337bb.chunk.js.map": "/static/js/2.bfe337bb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4c08bc7133ed80308f6e22dbce40c5f6.js": "/precache-manifest.4c08bc7133ed80308f6e22dbce40c5f6.js",
+    "precache-manifest.bb97cfad94358d0ef0e0a1b7966c0abf.js": "/precache-manifest.bb97cfad94358d0ef0e0a1b7966c0abf.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.3fac7f28.chunk.css.map": "/static/css/main.3fac7f28.chunk.css.map",
-    "static/js/2.ee5ecee6.chunk.js.LICENSE.txt": "/static/js/2.ee5ecee6.chunk.js.LICENSE.txt",
+    "static/css/main.481c6462.chunk.css.map": "/static/css/main.481c6462.chunk.css.map",
+    "static/js/2.bfe337bb.chunk.js.LICENSE.txt": "/static/js/2.bfe337bb.chunk.js.LICENSE.txt",
     "static/media/book.587cbb5d.svg": "/static/media/book.587cbb5d.svg",
     "static/media/home.805bb24e.svg": "/static/media/home.805bb24e.svg",
-    "static/media/info.2a6e0d61.svg": "/static/media/info.2a6e0d61.svg",
+    "static/media/info.36856d40.svg": "/static/media/info.36856d40.svg",
+    "static/media/instaold.b0f59331.svg": "/static/media/instaold.b0f59331.svg",
     "static/media/map.bb1f2f10.svg": "/static/media/map.bb1f2f10.svg",
     "static/media/mask.34fc11e3.svg": "/static/media/mask.34fc11e3.svg",
     "static/media/shome.a75b22b4.svg": "/static/media/shome.a75b22b4.svg",
@@ -32,8 +33,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.36ad6461.js",
-    "static/js/2.ee5ecee6.chunk.js",
-    "static/css/main.3fac7f28.chunk.css",
-    "static/js/main.bcda88e0.chunk.js"
+    "static/js/2.bfe337bb.chunk.js",
+    "static/css/main.481c6462.chunk.css",
+    "static/js/main.d285ee2a.chunk.js"
   ]
 }

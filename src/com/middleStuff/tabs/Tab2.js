@@ -96,6 +96,8 @@ const Tab2 = (props) => {
 					/>
 				</div>
 
+				<div style = {{height: '3px', width: '77%', margin: '0 auto', backgroundColor: '#b7b7b7', borderRadius: '100px'}} />
+
 				<div style = {dropTopS} onClick = {handleLocal} className = 'noSelect'>
 					<div style = {{width: '15%'}}>
 						<Trangle style = {{...triangleS, transform: `rotate(${localTriangTrans}deg)`}}/>

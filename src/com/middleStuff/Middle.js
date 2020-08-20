@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import TabInfo from './tabs/TabInfo'
+
 import Tab0 from './tabs/Tab0'
 import Tab1 from './tabs/Tab1'
 import Tab2 from './tabs/Tab2'
@@ -44,7 +46,9 @@ const Middle = (props) => {
 			<div 
            	 	style = {{height: '100%', transform: `translateX(${mainTrans})`, transition: 'transform 0.4s ease-out', display: 'flex'}}
         	>	
-				
+				<TabInfo 
+					tab = {mainTab}
+				/>
 			 	<Tab0 
 			 		tab = {mainTab} 
 			 		setShown = {setShown} 

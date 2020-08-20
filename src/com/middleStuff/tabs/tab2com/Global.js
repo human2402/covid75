@@ -11,7 +11,16 @@ const Global = (prop) => {
 	//BACK END STUFF
 	useEffect (() => backEnd(), [])
 
-	useEffect (() => consoling(), [maxCountry])
+	useEffect (() => {
+		consoling()
+		checker()
+	}, [maxCountry])
+
+	const checker = () => {
+		if (minCountry[0] === undefined) {
+			backEnd ()
+		}
+	}
 
 	const backEnd = () => {
 		const requestOptions = {
@@ -41,7 +50,7 @@ const Global = (prop) => {
             if (day < 10) day = '0' + day
         let month = date.getMonth () + 1
             if (month < 10) month = '0' + month
-        let result = `${day}.${month}.${date.getFullYear()}`
+        let result = `${day}.${month}`
 
 		return result
 	}
@@ -60,6 +69,7 @@ const Global = (prop) => {
 		countries.map ((item, index) => {
 			if (index === winIndex) winCountry = item
 		})
+
 
 		let shorter = await toShort(winCountry.CountryCode)
 
@@ -109,13 +119,81 @@ const Global = (prop) => {
 	}
 
 	//VARS
-	let mainTrans = '-100'
+	let mainTrans = '-110'
 	if (prop.isOpen) mainTrans = '0'
 
-	return (
-		<div style = {{ transform: `translateY(${mainTrans}%)`, transition: 'transform 0.4s ease',
-			height:'30vh', width: '100%', backgroundColor:'purple'}}>
+	//STYLES
+	const upperPS = {
+		margin: '3vh 0 0 0', fontSize: '3vh', fontWeight: '400'
+	}
+	
+	const imgContainerS = {
+		width: '20%',
+		margin: '0 0 0 5%',
+		display: 'grid',
+		placeItems: 'center'
+	}
+	const imgS = {
+		width: '100%'
+	}
+	const infoContainerS = {
+		margin: '0 5%', width: '70%'
+	}
+	const countryNamePS = {
+		fontSize: '3.2vh', fontWeight: '400', margin: '1vh 0 0 0', lineHeight: '1.2', fontWeight: '300'
+	}
+	const numPS = {
+		fontSize: '3.5vh', margin: '0.7vh 0 2vh 0', lineHeight: 1
+	}
+	const chS = {
+		fontWeight: '300'
+	}
 
+	return (
+		<div style = {{width: '77%', margin: '0 auto' ,transform: `translateY(${mainTrans}%)`, transition: 'transform 0.4s ease'}}>
+			<div>
+				<p style = {{...upperPS, margin: '0'}}>
+					Всего заражено:
+				</p>
+				<div style = {{display: 'flex', justifyContent: 'flex-end'}}>
+					<p style = {{margin: '1vh 0 0 0', fontSize: '3.4vh', backgroundColor: '#b7b7b7', padding: '0 5%', borderRadius: '10px'}}> 
+						{totalInfected} ч.
+					</p>
+				</div>
+			</div>
+			<div style = {{color: '#ffffff'}}>
+				<div style = {{marginTop: '2.5vh' ,borderRadius: '20px 20px 0 0' ,width: '100%', backgroundColor: '#a73b3b', display: 'flex'}}>
+					<div style = {imgContainerS}>
+						<img style = {imgS} src = {`https://www.countryflags.io/${maxCountry[2]}/shiny/64.png`} />
+					</div>
+					<div style = {infoContainerS}>  
+						<p style = {countryNamePS}>
+							{maxCountry[0]}
+						</p>
+						<p style = {numPS}> 
+							{maxCountry[1]} <span style = {chS}>ч.</span>
+						</p>
+					</div>
+				</div>
+				<div style = {{borderRadius: '0 0 20px 20px' ,width: '100%', backgroundColor: '#519c37', display: 'flex'}}>
+					<div style = {imgContainerS}>
+						<img style = {imgS} src = {`https://www.countryflags.io/${minCountry[2]}/shiny/64.png`} />
+					</div>
+					<div style = {infoContainerS}>  
+						<p style = {countryNamePS}>
+							{minCountry[0]}
+						</p>
+						<p style = {numPS}> 
+							{minCountry[1]} <span style = {chS}>ч.</span>
+						</p>
+					</div>
+				</div>
+				<div style = {{display: 'flex', justifyContent: 'flex-end'}}>
+					<p style = {{fontSize: '2vh', color: '#000', margin: '0.5vh 5% 0.7vh 0'}}> 
+						<span style = {chS}> Обновлено</span> {upadteDate}
+					</p>
+				</div>
+			</div>
 		</div>
 	)
 }

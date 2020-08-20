@@ -51,7 +51,7 @@ const Local = (props) => {
 	}
 
 	//VARS
-	let localTarns = '-100'
+	let localTarns = '-110'
 	if (props.isOpen) localTarns = '0'
 
 
