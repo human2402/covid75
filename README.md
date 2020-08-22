@@ -1,6 +1,6 @@
 ## Covid75
 
-i an app about situation in Transbaykalian state.
+is an app about situation in Transbaykalian state.
 
 The web app is bootstrapted using React.js
 
