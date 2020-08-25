@@ -6,7 +6,6 @@ const TabInfo = (prop) => {
 	//VARS
 	let mainDisplay = 'none'
     if (prop.tab === '-1') mainDisplay = 'block'
-    	console.log (prop.tab)
 
 	return (
 		<div style = {{display: mainDisplay, height: '100%', width: '100%'}}>
@@ -50,6 +49,13 @@ const TabInfo = (prop) => {
 							</p>
 						</div>
 					</a>
+					<div style = {{margin: '2vh 2vw 2vh 0'}}>
+
+						<p  style = {{margin: '0'}}>
+							Приложение сделал ученик 11А класса Дмитрий Малежик.
+						</p>
+
+					</div>
 				</div>
 			</div>
 		</div>

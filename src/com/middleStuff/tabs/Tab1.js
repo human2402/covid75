@@ -49,7 +49,7 @@ const Tab1 = (props) => {
 		backgroundColor: '#d8d8d8',
 		borderRadius: '21px',
 		marginTop: '4vh',
-		boxShadow: '-4px -4px 24px rgba(255,255,255,1), 4px 4px 24px rgba(0,0,0,0.2)'
+		boxShadow: '-4px -4px 10px rgba(255,255,255,1), 4px 4px 10px rgba(0,0,0,0.2)'
 	}
 	const liDivS = {
 		height: "90%",
@@ -102,6 +102,7 @@ const Tab1 = (props) => {
 
 	return (
 		<div
+			className = 'noScrollBar'
 			style = {{
 				position: 'relative', display: mainDisplay,
 				height: '97%', width: '95%', margin: '0 auto', backgroundColor: '#e5e5e5',

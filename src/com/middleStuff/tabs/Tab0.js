@@ -89,7 +89,7 @@ const Tab0 = (props) => {
     return (
         <div style = {{height: '100%', width: '100%', display: mainDisplay}}>
             <div style = {{height: '95%', borderRadius: '30px', width: '95%', margin: 'auto ', background: 'linear-gradient(143deg, #ff6969 6%, #cd3d3d 50%, #a81c1c 93%)',
-                    boxShadow: '7px 7px 10px 0 rgba(0, 0, 0, 0.3), -7px -7px 10px 0 rgba(255, 255, 255, 1)'}}
+                    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.3), -4px -4px 10px rgba(255, 255, 255, 1)'}}
             >
                 
                 <div className = 'zabTitle' style = {{height: '10%'}} >

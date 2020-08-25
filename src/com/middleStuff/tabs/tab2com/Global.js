@@ -12,7 +12,7 @@ const Global = (prop) => {
 	useEffect (() => backEnd(), [])
 
 	useEffect (() => {
-		consoling()
+	//	consoling()
 		checker()
 	}, [maxCountry])
 
@@ -56,6 +56,8 @@ const Global = (prop) => {
 	}
 
 	const calcMore = async (countries, pos) => {
+		console.log (countries)
+
 		let numArray = []
 		countries.map ((item, index) => {
 			let num = item.TotalConfirmed
@@ -64,12 +66,19 @@ const Global = (prop) => {
 		let minNum
 		if (pos === 'min') minNum = Math.min (...numArray)
 		if (pos === 'max') minNum =	Math.max (...numArray)
-		let winIndex = numArray.indexOf (minNum)
+		
 		let winCountry
 		countries.map ((item, index) => {
-			if (index === winIndex) winCountry = item
+			if (item.TotalConfirmed === minNum) winCountry = item
 		})
+		//let winIndex = numArray.indexOf (minNum)
+		//let winCountry
+		//countries.map ((item, index) => {
+		//	console.log (`index ${index}`)
+		//	if (index === winIndex) winCountry = item
+		//})
 
+		console.log (winCountry)
 
 		let shorter = await toShort(winCountry.CountryCode)
 

@@ -42,11 +42,6 @@ const Tab2 = (props) => {
 		globalTriangTrans = '90'
 		globalDivHeight = '100%'
 	}
-
-	let ofScroll = 'hidden' 
-	if (isGlobalOpen | isLocalOpen) {
-		ofScroll = 'scroll'
-	}
 	
     // STYLES
 	const dropDivS = {
@@ -73,11 +68,12 @@ const Tab2 = (props) => {
 
 	return (
 		<div
+			className = 'noScrollBar'
 			style = {{
 				display: mainDisplay,
 				height: '97%', width: '95%', margin: '0 auto', backgroundColor: '#e5e5e5',
-				borderRadius: '33px', boxShadow: '-7px -7px 24px rgba(255,255,255,1), 7px 7px 24px rgba(0,0,0,0.2)',
-				overflow: 'hidden', overflowY: ofScroll
+				borderRadius: '33px', boxShadow: '-4px -4px 10px rgba(255,255,255,1), 4px 4px 10px rgba(0,0,0,0.2)',
+				overflow: 'hidden', overflowY: 'scroll'
 			}}
 		>
 
