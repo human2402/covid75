@@ -23,7 +23,7 @@ const Local = (props) => {
 		if (data.infectedByRegion !== undefined) {
 			// calc msk
 			let regions = data.infectedByRegion
-			setMskInfected (regions[75].infected + regions[83].infected)
+			setMskInfected (regions[23].infected + regions[0].infected)
 			// calc less
 				let numArray = []
 				regions.map (item => numArray.push(item.infected))

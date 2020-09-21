@@ -11,6 +11,8 @@ const Tab2 = (props) => {
 
 	const [isLocalOpen, setLocalOpen] = useState (false)
 	const [isGlobalOpen, setGlobalOpen] = useState (false)
+
+	const [isScroll, setScroll] = useState ('hidden')
 	
 	useEffect (() => {
 		setLocalOpen (false)
@@ -20,9 +22,11 @@ const Tab2 = (props) => {
     //HANDLERS
 	const handleLocal = () => {
 		setLocalOpen (prevLocalOpen => !prevLocalOpen)
+		setScroll ('scroll')
 	}
 	const handleGlobal = () => {
 		setGlobalOpen (prevGlobalOpen => !prevGlobalOpen)
+		setScroll ('scroll')
 	}
 
     //VARS
@@ -73,7 +77,7 @@ const Tab2 = (props) => {
 				display: mainDisplay,
 				height: '97%', width: '95%', margin: '0 auto', backgroundColor: '#e5e5e5',
 				borderRadius: '33px', boxShadow: '-4px -4px 10px rgba(255,255,255,1), 4px 4px 10px rgba(0,0,0,0.2)',
-				overflow: 'hidden', overflowY: 'scroll'
+				overflow: 'hidden', overflowY: isScroll
 			}}
 		>
 

@@ -58,10 +58,11 @@ const Global = (prop) => {
 	const calcMore = async (countries, pos) => {
 		console.log (countries)
 
+
 		let numArray = []
 		countries.map ((item, index) => {
 			let num = item.TotalConfirmed
-			if (numArray.indexOf(num) === -1 | index === 0) numArray.push (num)
+			if (numArray.indexOf(num) === -1 | index === 0) if (num > 10) numArray.push (num)
 		} )
 		let minNum
 		if (pos === 'min') minNum = Math.min (...numArray)
@@ -77,8 +78,6 @@ const Global = (prop) => {
 		//	console.log (`index ${index}`)
 		//	if (index === winIndex) winCountry = item
 		//})
-
-		console.log (winCountry)
 
 		let shorter = await toShort(winCountry.CountryCode)
 

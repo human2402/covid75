@@ -49,7 +49,7 @@ const TabInfo = (prop) => {
 							</p>
 						</div>
 					</a>
-					<div style = {{margin: '2vh 2vw 2vh 0'}}>
+					<div style = {{margin: '2.5vh 2vw 2vh 0'}}>
 
 						<p  style = {{margin: '0'}}>
 							Приложение сделал ученик 11А класса Дмитрий Малежик.

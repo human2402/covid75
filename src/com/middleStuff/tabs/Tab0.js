@@ -27,7 +27,8 @@ const Tab0 = (props) => {
             setLoaded (true)
             props.setGlobal (result)
            // console.log (result.infectedByRegion[50])
-            setLocalData ([result.infectedByRegion[50].infected, result.infectedByRegion[50].recovered, result.infectedByRegion[50].deceased])
+           console.log (result)
+            setLocalData ([result.infectedByRegion[22].infected, result.infectedByRegion[22].recovered, result.infectedByRegion[22].deceased])
             setUpdateTime (result.lastUpdatedAtSource.toString().slice (0, -14))
           //  calcMeter (result.infectedByRegion[50])
         })
@@ -77,7 +78,7 @@ const Tab0 = (props) => {
 
 
 
-    const infoBorder = {height: '2px', width: '100%', backgroundColor: '#c4c4c4'}
+    const infoBorder = {height: '2px', width: '100%', backgroundColor: '#c4c4c4', borderRadius: '100px'}
     const infoLi = {height: '99%', width: '90%', display: 'flex', justifyContent: 'space-between', padding: '0 5%' }
     const statusP = {fontSize: infoLiSize[1], lineHeight: infoLiSize[0], margin: 0}
     const statusNum = {fontWeight: 'bold'}
