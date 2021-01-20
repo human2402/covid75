@@ -17,10 +17,10 @@ function App() {
     setShowTab (value)
   }
 
-  function handleInfo () {
-    if (infoOpen) setInfoOpen (false)
-    if (!infoOpen) setInfoOpen (true)
-  }
+  // function handleInfo () {
+  //   if (infoOpen) setInfoOpen (false)
+  //   if (!infoOpen) setInfoOpen (true)
+  // }
 
   //VARS
 

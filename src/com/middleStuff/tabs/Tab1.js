@@ -137,7 +137,7 @@ const Tab1 = (props) => {
 
 		 	<div style = {{width: '80%', height: '100%', margin: '0 auto'}} > 
 
-		 		<ul style = {{listStyle: 'none', padding: '0', margin: '4vh 0'}}>
+		 		<ul style = {{listStyle: 'none', padding: '0', margin: '4vh 0 5vh 0'}}>
 		 			<li style = {liS}>
 		 				<div style = {liDivS}>
 		 					<div style = {liDumbDivS} />
@@ -231,7 +231,7 @@ const Tab1 = (props) => {
 		 						
 		 					
 			 					<p style = {liTextS}>
-			 						Использование медицинской маски предотвращает попадение капел распираторных выделений, которые могут содержать вирусы 
+			 						Использование <span style = {{fontWeight: '600'}}>медицинской маски</span> предотвращает попадение капел распираторных выделений, которые могут содержать вирусы 
 			 					</p>
 		 						<div style = {liTextIconDivS} >
 		 							<MaskIcon style = {{ height: '18vh',position: 'relative', bottom: '-13%' ,width: '50%', opacity: '0.04'}} />

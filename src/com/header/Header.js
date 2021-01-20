@@ -17,7 +17,7 @@ const Header = (props) => {
 	}, [])
 	useEffect (() => {
 		handleSize ()
-	}, [window])
+	}, [])
 
 	const handleSize = () => {
 		const headHeight = document.querySelector('header').clientHeight
@@ -68,7 +68,7 @@ const Header = (props) => {
 						<div 
 							style = {{top: logoLineMargin, height: '5px', width: '15%', maxWidth: '140px', backgroundColor: '#b84646', borderRadius: '100px', position: 'absolute'}}
 						/>
-						<h1 className = 'logoH1' style = {{position: 'fixed', fontFamily: 'Poppins, Roboto', fontWeight: 'regular', padding: 0, margin: 0, marginTop: logoTopMargin, fontSize: logoFontSize}}>Covid75</h1>
+						<h1 className = 'logoH1' style = {{position: 'fixed', fontFamily: 'Poppins', fontWeight: 'regular', padding: 0, margin: 0, marginTop: logoTopMargin, fontSize: logoFontSize}}>Covid75</h1>
 					</div>
 					<div style = {{flex: 1}}/>
 					<span

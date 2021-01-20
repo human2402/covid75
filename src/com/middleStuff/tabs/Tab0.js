@@ -22,15 +22,24 @@ const Tab0 = (props) => {
     const fetchLocalData = async () => {
         fetch ('https://api.apify.com/v2/key-value-stores/1brJ0NLbQaJKPTWMO/records/LATEST?disableRedirect=true')
         .then (response => response.json())
-        .then (result => {
+        .then (async function (result) {
             props.setShown (true)
             setLoaded (true)
             props.setGlobal (result)
-           // console.log (result.infectedByRegion[50])
-           console.log (result)
-            setLocalData ([result.infectedByRegion[22].infected, result.infectedByRegion[22].recovered, result.infectedByRegion[22].deceased])
+            // console.log (result.infectedByRegion[50])
+            //let zabArray = await getZabID ()
+            // async function getZabID () {result.infectedByRegion.forEach ((region, index) => {
+            //     if (region.region == 'Забайкальский край')
+            //         {
+            //             console.log (index)
+            //             return (index)
+            //         }
+            //     })}
+            let zabID = -1; result.infectedByRegion.forEach((element, index) => {if (element.region == 'Забайкальский край') zabID = index})
+            console.log (result)
+            setLocalData ([result.infectedByRegion[zabID].infected, result.infectedByRegion[zabID].recovered, result.infectedByRegion[zabID].deceased])
             setUpdateTime (result.lastUpdatedAtSource.toString().slice (0, -14))
-          //  calcMeter (result.infectedByRegion[50])
+            //  calcMeter (result.infectedByRegion[50])
         })
         .catch (error => {
             setLoaded (false)

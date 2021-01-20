@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 import {ReactComponent as Home} from '../icons/home.svg'
 import {ReactComponent as Book} from '../icons/book.svg'
-import {ReactComponent as MapI} from '../icons/map.svg'
 import {ReactComponent as Stat} from '../icons/stat.svg'
 
 const Bottom = (props) => {
@@ -41,8 +40,6 @@ const Bottom = (props) => {
 	if (props.showTab === '1') color1 = '#9b3f3f'
 	let color2 = "#000000"
 	if (props.showTab === '2') color2 = '#9b3f3f'
-	let color3 = "#000000"
-	if (props.showTab === '3') color3 = '#9b3f3f'
 
 
 	// styles

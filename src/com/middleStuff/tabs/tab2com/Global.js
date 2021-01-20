@@ -56,7 +56,7 @@ const Global = (prop) => {
 	}
 
 	const calcMore = async (countries, pos) => {
-		console.log (countries)
+		//console.log (countries)
 
 
 		let numArray = []
